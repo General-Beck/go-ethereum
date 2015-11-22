@@ -2,7 +2,7 @@
 # with Go source code. If you know what GOPATH is then you probably
 # don't need to bother with make.
 
-.PHONY: geth geth-cross geth-linux geth-darwin geth-windows geth-android evm all test travis-test-with-coverage xgo clean install
+.PHONY: geth geth-cross geth-linux geth-darwin geth-windows geth-android evm all test travis-test-with-coverage xgo clean install uninstall
 GOBIN = build/bin
 
 geth:
@@ -54,4 +54,6 @@ xgo:
 clean:
 	rm -fr build/_workspace/pkg/ Godeps/_workspace/pkg $(GOBIN)/*
 install:
-	install $(GOBIN)/geth
+	install $(GOBIN)/geth /usr/local/bin
+uninstall:
+	rm -rf /usr/local/bin/geth
