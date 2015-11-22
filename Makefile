@@ -54,6 +54,6 @@ xgo:
 clean:
 	rm -fr build/_workspace/pkg/ Godeps/_workspace/pkg $(GOBIN)/*
 install:
-	install $(GOBIN)/geth /usr/local/bin
+	install $(GOBIN)/geth bin
 uninstall:
-	rm -rf /usr/local/bin/geth
+	rm -rf bin
